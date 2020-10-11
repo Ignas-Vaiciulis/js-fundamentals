@@ -59,6 +59,15 @@ console.log(addf(3)(4));
     addf(3)(4);           // 7
     applyf(mul)(5)(6);    // 30
 */
+function applyf (func) {
+    return function(a){
+        return function(b){
+            return func(a,b)
+        }
+    }
+}
+
+console.log(applyf(mul)(5)(6));
 
 
 
