@@ -105,9 +105,9 @@ function twice(func){
 }
 
 const double = twice(add);  
-console.log(double(11));    // 22  
+console.log(double(11));   
 const square = twice(mul);  
-console.log(square(11));    // 121
+console.log(square(11));  
 
 
 
@@ -116,7 +116,13 @@ console.log(square(11));    // 121
 
     composeu(double, square)(3);    // 36
 */
+function composeu(func1,func2){
+    return function(x){
+        return func2(func1(x));
+    }
+}
 
+console.log(composeu(double, square)(3));
 
 
 /*
