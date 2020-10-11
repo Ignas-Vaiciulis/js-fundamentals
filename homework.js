@@ -78,6 +78,15 @@ console.log(applyf(mul)(5)(6));
     add3(4);             // 7  
     curry(mul, 5)(6);    // 30  
 */
+function curry(func, x){
+    return function(y){
+        return func(x,y);
+    }
+}
+
+const add3 = curry(add, 3);  
+console.log(add3(4));               
+console.log(curry(mul, 5)(6));    
 
 
 
