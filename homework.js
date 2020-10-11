@@ -98,6 +98,16 @@ console.log(curry(mul, 5)(6));
     const square = twice(mul);  
     square(11);    // 121
 */
+function twice(func){
+    return function(x){
+        return func(x,x);
+    }
+}
+
+const double = twice(add);  
+console.log(double(11));    // 22  
+const square = twice(mul);  
+console.log(square(11));    // 121
 
 
 
