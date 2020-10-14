@@ -14,6 +14,8 @@ function mul(x, y) {
   return x * y;
 }
 
+console.log('Task no.1 results:')
+
 console.log(add(3, 4));
 console.log(mul(3, 4));
 
@@ -30,6 +32,8 @@ function identify(value) {
   return returnFunction;
 }
 
+console.log('Task no.2 results:')
+
 const idf = identify(3);
 console.log(idf());
 
@@ -44,6 +48,8 @@ function addf(x) {
     return x + y;
   };
 }
+
+console.log('Task no.3 results:')
 
 console.log(addf(3)(4));
 
@@ -62,6 +68,8 @@ function applyf(func) {
   };
 }
 
+console.log('Task no.4 results:')
+
 console.log(applyf(mul)(5)(6));
 
 /*
@@ -71,11 +79,14 @@ console.log(applyf(mul)(5)(6));
     add3(4);             // 7  
     curry(mul, 5)(6);    // 30  
 */
+
 function curry(func, x) {
   return function (y) {
     return func(x, y);
   };
 }
+
+console.log('Task no.5 results:')
 
 const add3 = curry(add, 3);
 console.log(add3(4));
@@ -89,11 +100,14 @@ console.log(curry(mul, 5)(6));
     const square = twice(mul);  
     square(11);    // 121
 */
+
 function twice(func) {
   return function (x) {
     return func(x, x);
   };
 }
+
+console.log('Task no.6 results:')
 
 const double = twice(add);
 console.log(double(11));
@@ -105,11 +119,14 @@ console.log(square(11));
 
     composeu(double, square)(3);    // 36
 */
+
 function composeu(func1, func2) {
   return function (x) {
     return func2(func1(x));
   };
 }
+
+console.log('Task no.7 results:')
 
 console.log(composeu(double, square)(3));
 
@@ -132,6 +149,8 @@ function addg(x) {
     return next;
   }
 }
+
+console.log('Task no.8 results:')
 
 console.log(addg(3)(4)(5)());
 console.log(addg(1)(2)(4)(8)());
@@ -159,6 +178,8 @@ function applyg(func) {
     };
   };
 }
+
+console.log('Task no.9 results:')
 
 console.log(applyg(add)(3)(4)(5)());
 console.log(applyg(mul)(1)(2)(4)(8)());
@@ -188,10 +209,11 @@ function fibonaccif(){
   return function(){
     invocationCounter++;
      return fibonacci(invocationCounter)
-     
   }
 
 }
+
+console.log('Task no.10 results:')
 
 const fib = fibonaccif();  
    console.log(fib());   
