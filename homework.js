@@ -142,6 +142,7 @@ console.log(addg(1)(2)(4)(8)());
     applyg(add)(3)(4)(5)();       // 12 
     applyg(mul)(1)(2)(4)(8)();    // 64
 */
+
 function applyg(func) {
   return function firstInvocation(x) {
     if (x === undefined) {
@@ -173,3 +174,29 @@ console.log(applyg(mul)(1)(2)(4)(8)());
     fib();    // 3  
     fib();    // 5
 */
+
+function fibonaccif(){
+  let invocationCounter = -1;
+
+  function fibonacci(x) {
+    if (x === 0) return 0;
+    if (x <= 1) return 1;
+  
+    return fibonacci(x - 1) + fibonacci(x - 2);
+  };
+
+  return function(){
+    invocationCounter++;
+     return fibonacci(invocationCounter)
+     
+  }
+
+}
+
+const fib = fibonaccif();  
+   console.log(fib());   
+   console.log(fib());
+   console.log(fib());
+   console.log(fib());
+   console.log(fib());
+   console.log(fib());
